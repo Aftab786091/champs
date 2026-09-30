@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apply | Rice CHAMPs</title>
+<meta name="description" content="Apply to the Rice CHAMPs founding cohort by October 15.">
+<meta property="og:title" content="Apply | Rice CHAMPs">
+<meta property="og:description" content="Apply to the Rice CHAMPs founding cohort by October 15.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stripe"></div>
+<header class="nav"><div class="wrap">
+<a class="brand" href="index.html">Rice <b>CHAMPs</b></a>
+<nav><a href="program.html">Program</a><a href="team.html">Team</a><a href="faq.html">FAQ</a><a class="pill" href="apply.html" aria-current="page">Apply</a></nav>
+</div></header>
+<main>
+<div class="wrap">
+<div class="hero small">
+<h1>Rice CHAMPs Founding Cohort Application</h1>
+<div class="chips" style="margin:0 0 14px"><span class="chip">Due October 15</span><span class="chip">Interviews October 20</span><span class="chip">Decisions October 25</span></div>
+<p class="sub">Takes about 10 minutes.</p>
+</div>
+
+<section class="formwrap">
+<form id="app" novalidate>
+<fieldset>
+<legend>Which roles are you applying for?</legend>
+<p class="hint">Select all that apply.</p>
+<div class="tiles" id="roles">
+<label class="tile"><input type="checkbox" name="role" value="vol"><span class="box"><span><b>Pediatric Volunteer at CMH</b><small>10 spots, 4 hrs/week</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="checkbox" name="role" value="edu" data-c="Education Committee"><span class="box"><span><b>Education Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="checkbox" name="role" value="out" data-c="Outreach Committee"><span class="box"><span><b>Outreach Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="checkbox" name="role" value="soc" data-c="Socials Committee"><span class="box"><span><b>Socials Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
+</div>
+<p class="err" id="roleerr" role="alert"></p>
+</fieldset>
+
+<fieldset>
+<legend>About you</legend>
+<p class="hint">&nbsp;</p>
+<div class="grid2">
+<label class="f"><span class="n">Name</span><input required autocomplete="name"></label>
+<label class="f"><span class="n">Email</span><input type="email" required autocomplete="email"></label>
+<label class="f"><span class="n">Year</span><select required><option value="">Select</option><option>Freshman</option><option>Sophomore</option><option>Junior</option><option>Senior</option></select></label>
+<label class="f"><span class="n">Major</span><input required></label>
+</div>
+<label class="f" style="margin-top:14px"><span class="n">Weekly availability</span><textarea required placeholder="When are you generally free during the week?"></textarea></label>
+</fieldset>
+
+<fieldset>
+<legend>Questions</legend>
+<p class="hint">Short answers are great.</p>
+<div class="qs">
+<label class="f"><span class="n">Why CHAMPs? (2 to 3 sentences)</span><textarea required></textarea></label>
+<label class="f"><span class="n">Tell us about a time you helped someone feel supported. (2 to 4 sentences)</span><textarea required></textarea></label>
+<div class="cq" data-for="edu" style="--c:var(--blue)"><label class="f"><span class="n">Education Committee: In one sentence, why this committee?</span><input></label></div>
+<div class="cq" data-for="out" style="--c:var(--green)"><label class="f"><span class="n">Outreach Committee: In one sentence, why this committee?</span><input></label></div>
+<div class="cq" data-for="soc" style="--c:var(--orange)"><label class="f"><span class="n">Socials Committee: In one sentence, why this committee?</span><input></label></div>
+<label class="f"><span class="n">Anything else we should know? (optional)</span><textarea></textarea></label>
+</div>
+</fieldset>
+
+<div style="text-align:center"><p class="err" id="submiterr" role="alert"></p><button class="btn" type="submit">Submit application</button></div>
+</form>
+
+<div class="thanks" id="thanks" role="status">
+<h2>Thanks for applying!</h2>
+<p>We'll be in touch about interviews, which take place on October 20.<br>Questions? <span class="ph">[Email]</span></p>
+</div>
+</section>
+</div>
+</main>
+<footer>
+<div class="stripe"></div>
+<div class="wrap">Rice CHAMPs: Community of Healthcare and Aspiring Medical Professionals</div>
+</footer>
+<script>
+(function(){
+/* Paste the application form link here once it is set up. */
+var FORM_URL="";
+var form=document.getElementById('app'),boxes=[].slice.call(form.querySelectorAll('input[name=role]')),err=document.getElementById('roleerr');
+function sync(){
+  boxes.forEach(function(b){
+    var q=form.querySelector('.cq[data-for="'+b.value+'"]');
+    if(!q)return;
+    q.classList.toggle('on',b.checked);
+    var i=q.querySelector('input'); i.required=b.checked;
+  });
+  if(boxes.some(function(b){return b.checked})) err.textContent='';
+}
+boxes.forEach(function(b){b.addEventListener('change',sync)});
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!boxes.some(function(b){return b.checked})){err.textContent='Select at least one role to continue.';document.getElementById('roles').scrollIntoView({behavior:'smooth',block:'center'});return;}
+  if(!form.checkValidity()){form.reportValidity();return;}
+  if(!FORM_URL){document.getElementById('submiterr').textContent='Preview only: this form is not connected to a response sheet yet, so nothing was sent.';return;}
+  form.style.display='none';
+  var t=document.getElementById('thanks');t.classList.add('on');t.scrollIntoView({behavior:'smooth',block:'center'});
+});
+})();
+</script>
+</body>
+</html>
