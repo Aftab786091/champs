@@ -30,13 +30,13 @@
 <section class="formwrap">
 <form id="app" novalidate>
 <fieldset>
-<legend>Which roles are you applying for?</legend>
+<legend>Which roles would you like to join?</legend>
 <p class="hint">Select all that apply.</p>
 <div class="tiles" id="roles">
-<label class="tile"><input type="checkbox" name="role" value="vol"><span class="box"><span><b>Pediatric Volunteer at CMH</b><small>10 spots, 4 hrs/week</small></span><i>&#10003;</i></span></label>
-<label class="tile"><input type="checkbox" name="role" value="edu" data-c="Education Committee"><span class="box"><span><b>Education Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
-<label class="tile"><input type="checkbox" name="role" value="out" data-c="Outreach Committee"><span class="box"><span><b>Outreach Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
-<label class="tile"><input type="checkbox" name="role" value="soc" data-c="Socials Committee"><span class="box"><span><b>Socials Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="checkbox" name="role" value="Pediatric Volunteer" data-k="vol"><span class="box"><span><b>Pediatric Volunteer at CMH</b><small>10 spots, 4 hrs/week</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="checkbox" name="role" value="Education Committee" data-k="edu"><span class="box"><span><b>Education Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="checkbox" name="role" value="Outreach Committee" data-k="out"><span class="box"><span><b>Outreach Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="checkbox" name="role" value="Socials Committee" data-k="soc"><span class="box"><span><b>Socials Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
 </div>
 <p class="err" id="roleerr" role="alert"></p>
 </fieldset>
@@ -45,33 +45,33 @@
 <legend>About you</legend>
 <p class="hint">&nbsp;</p>
 <div class="grid2">
-<label class="f"><span class="n">Name</span><input required autocomplete="name"></label>
-<label class="f"><span class="n">Email</span><input type="email" required autocomplete="email"></label>
-<label class="f"><span class="n">Year</span><select required><option value="">Select</option><option>Freshman</option><option>Sophomore</option><option>Junior</option><option>Senior</option></select></label>
-<label class="f"><span class="n">Major</span><input required></label>
+<label class="f"><span class="n">Name (First and Last)</span><input id="f-name" required autocomplete="name"></label>
+<label class="f"><span class="n">Rice Email</span><input id="f-email" type="email" required autocomplete="email"></label>
+<label class="f"><span class="n">Expected Graduation Year</span><input id="f-year" required inputmode="numeric" placeholder="e.g. 2029"></label>
+<label class="f"><span class="n">Phone number</span><input id="f-phone" type="tel" required autocomplete="tel"></label>
 </div>
-<label class="f" style="margin-top:14px"><span class="n">Weekly availability</span><textarea required placeholder="When are you generally free during the week?"></textarea></label>
+<label class="f" style="margin-top:14px"><span class="n">Major(s) and Minor(s)</span><input id="f-major" required></label>
 </fieldset>
 
 <fieldset>
-<legend>Questions</legend>
-<p class="hint">Short answers are great.</p>
+<legend>Your answers</legend>
+<p class="hint">Short answers are great. Word limits are shown under each box.</p>
 <div class="qs">
-<label class="f"><span class="n">Why CHAMPs? (2 to 3 sentences)</span><textarea required></textarea></label>
-<label class="f"><span class="n">Tell us about a time you helped someone feel supported. (2 to 4 sentences)</span><textarea required></textarea></label>
-<div class="cq" data-for="edu" style="--c:var(--blue)"><label class="f"><span class="n">Education Committee: In one sentence, why this committee?</span><input></label></div>
-<div class="cq" data-for="out" style="--c:var(--green)"><label class="f"><span class="n">Outreach Committee: In one sentence, why this committee?</span><input></label></div>
-<div class="cq" data-for="soc" style="--c:var(--orange)"><label class="f"><span class="n">Socials Committee: In one sentence, why this committee?</span><input></label></div>
-<label class="f"><span class="n">Anything else we should know? (optional)</span><textarea></textarea></label>
+<label class="f"><span class="n">Why are you interested in joining Rice CHAMPs? (150 words max)</span><textarea id="f-why" required data-max="150"></textarea></label>
+<div class="cq" data-for="vol" style="--c:var(--pink)"><label class="f"><span class="n">This program focuses on providing companionship, comfort, and emotional support to children and their families. Describe a time when you helped someone feel supported during a difficult or stressful situation. (150 words max)</span><textarea id="f-supported" data-max="150"></textarea></label></div>
+<div class="cq" data-for="edu" style="--c:var(--blue)"><label class="f"><span class="n">Education Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-max="100"></textarea></label></div>
+<div class="cq" data-for="out" style="--c:var(--green)"><label class="f"><span class="n">Outreach Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-max="100"></textarea></label></div>
+<div class="cq" data-for="soc" style="--c:var(--orange)"><label class="f"><span class="n">Socials Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-max="100"></textarea></label></div>
+<label class="f"><span class="n">List any extracurriculars or commitments you have this year.</span><textarea id="f-extra" required></textarea></label>
 </div>
 </fieldset>
 
-<div style="text-align:center"><p class="err" id="submiterr" role="alert"></p><button class="btn" type="submit">Submit application</button></div>
+<div style="text-align:center"><p class="err" id="submiterr" role="alert"></p><button class="btn" id="sendbtn" type="submit">Submit application</button></div>
 </form>
 
 <div class="thanks" id="thanks" role="status">
 <h2>Thanks for applying!</h2>
-<p>We'll be in touch about interviews, which take place on October 20.<br>Questions? <span class="ph">[Email]</span></p>
+<p>We’ll be in touch about interviews, which take place on October 20.<br>Questions? <span class="ph">[Email]</span></p>
 </div>
 </section>
 </div>
@@ -82,26 +82,65 @@
 </footer>
 <script>
 (function(){
-/* Paste the application form link here once it is set up. */
-var FORM_URL="";
-var form=document.getElementById('app'),boxes=[].slice.call(form.querySelectorAll('input[name=role]')),err=document.getElementById('roleerr');
+/* Google Form connection. To point this page at a different form, change FORM_ID and the entry numbers in E. */
+var FORM_ID="1FAIpQLSfZivrpBeLIXBJGRTUkiM7w1sM0OLi4kdmDIhiNzU_HVJN_ig";
+var POST_URL="https://docs.google.com/forms/d/e/"+FORM_ID+"/formResponse";
+var VIEW_URL="https://docs.google.com/forms/d/e/"+FORM_ID+"/viewform";
+var E={name:"entry.2005620554",email:"entry.1045781291",year:"entry.1065046570",phone:"entry.1166974658",major:"entry.839337160",roles:"entry.304485123",why:"entry.699560844",supported:"entry.2024790593",committees:"entry.376921666",extra:"entry.1954516655"};
+
+var form=document.getElementById('app'),boxes=[].slice.call(form.querySelectorAll('input[name=role]')),
+    err=document.getElementById('roleerr'),serr=document.getElementById('submiterr'),btn=document.getElementById('sendbtn');
+function words(s){s=s.trim();return s?s.split(/\s+/).length:0}
+function val(id){return document.getElementById(id).value.trim()}
+
+[].slice.call(form.querySelectorAll('textarea[data-max]')).forEach(function(t){
+  var max=+t.dataset.max,c=document.createElement('span');c.className='wc';t.parentNode.appendChild(c);
+  function upd(){var n=words(t.value);c.textContent=n+' / '+max+' words';c.classList.toggle('over',n>max)}
+  t.addEventListener('input',upd);upd();
+});
+
 function sync(){
   boxes.forEach(function(b){
-    var q=form.querySelector('.cq[data-for="'+b.value+'"]');
+    var q=form.querySelector('.cq[data-for="'+b.dataset.k+'"]');
     if(!q)return;
     q.classList.toggle('on',b.checked);
-    var i=q.querySelector('input'); i.required=b.checked;
+    var t=q.querySelector('textarea');t.required=b.checked;
   });
-  if(boxes.some(function(b){return b.checked})) err.textContent='';
+  if(boxes.some(function(b){return b.checked}))err.textContent='';
 }
 boxes.forEach(function(b){b.addEventListener('change',sync)});
+
 form.addEventListener('submit',function(e){
-  e.preventDefault();
-  if(!boxes.some(function(b){return b.checked})){err.textContent='Select at least one role to continue.';document.getElementById('roles').scrollIntoView({behavior:'smooth',block:'center'});return;}
+  e.preventDefault();serr.textContent='';
+  var picked=boxes.filter(function(b){return b.checked});
+  if(!picked.length){err.textContent='Select at least one role to continue.';document.getElementById('roles').scrollIntoView({behavior:'smooth',block:'center'});return;}
   if(!form.checkValidity()){form.reportValidity();return;}
-  if(!FORM_URL){document.getElementById('submiterr').textContent='Preview only: this form is not connected to a response sheet yet, so nothing was sent.';return;}
-  form.style.display='none';
-  var t=document.getElementById('thanks');t.classList.add('on');t.scrollIntoView({behavior:'smooth',block:'center'});
+  var tooLong=[].slice.call(form.querySelectorAll('textarea[data-max]')).filter(function(t){return t.offsetParent!==null&&words(t.value)>+t.dataset.max});
+  if(tooLong.length){serr.textContent='One or more answers are over the word limit. Please shorten them and try again.';tooLong[0].focus();return;}
+
+  var p=new URLSearchParams();
+  p.append(E.name,val('f-name'));p.append(E.email,val('f-email'));p.append(E.year,val('f-year'));
+  p.append(E.phone,val('f-phone'));p.append(E.major,val('f-major'));
+  picked.forEach(function(b){p.append(E.roles,b.value)});
+  p.append(E.why,val('f-why'));
+  if(boxes[0].checked)p.append(E.supported,val('f-supported'));
+  var parts=[];
+  boxes.slice(1).forEach(function(b){
+    if(!b.checked)return;
+    var t=form.querySelector('.cq[data-for="'+b.dataset.k+'"] textarea').value.trim();
+    parts.push(b.value+': '+t);
+  });
+  if(parts.length)p.append(E.committees,parts.join('\n\n'));
+  p.append(E.extra,val('f-extra'));
+
+  btn.disabled=true;btn.textContent='Sending...';
+  fetch(POST_URL,{method:'POST',mode:'no-cors',body:p}).then(function(){
+    form.style.display='none';
+    var t=document.getElementById('thanks');t.classList.add('on');t.scrollIntoView({behavior:'smooth',block:'center'});
+  }).catch(function(){
+    btn.disabled=false;btn.textContent='Submit application';
+    serr.innerHTML='Something went wrong sending your application. Please try again, or <a href="'+VIEW_URL+'">apply through our backup form</a>.';
+  });
 });
 })();
 </script>

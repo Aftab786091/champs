@@ -159,3 +159,8 @@ legend,.lbl{font-size:20px;font-weight:800;color:var(--head);margin:0 0 4px;padd
 .thanks h2{margin-bottom:10px}
 .thanks p{margin:0;color:var(--muted)}
 .ph{background:#fff3a8;color:#4a4200;padding:1px 6px;border-radius:4px}
+
+.wc{display:block;font-size:13px;color:var(--muted);margin-top:4px;text-align:right}
+.wc.over{color:#d6336c;font-weight:600}
+.err a{color:inherit}
+.btn:disabled{opacity:.6;cursor:wait}
