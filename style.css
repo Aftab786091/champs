@@ -164,3 +164,5 @@ legend,.lbl{font-size:20px;font-weight:800;color:var(--head);margin:0 0 4px;padd
 .wc.over{color:#d6336c;font-weight:600}
 .err a{color:inherit}
 .btn:disabled{opacity:.6;cursor:wait}
+.person:nth-child(4){--c:#d98a0b}.person:nth-child(5){--c:var(--red)}.person:nth-child(6){--c:var(--indigo)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .person:nth-child(4){--c:var(--orange)}:root:not([data-theme="light"]) .person:nth-child(6){--c:#9aa2ff}}
