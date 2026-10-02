@@ -41,6 +41,23 @@
 <p class="err" id="roleerr" role="alert"></p>
 </fieldset>
 
+<fieldset>
+<legend>About you</legend>
+<p class="hint">&nbsp;</p>
+<div class="grid2">
+<label class="f"><span class="n">Name (First and Last)</span><input id="f-name" required autocomplete="name"></label>
+<label class="f"><span class="n">Rice Email</span><input id="f-email" type="email" required autocomplete="email"></label>
+<label class="f"><span class="n">College and Expected Graduation Date</span><input id="f-year" required placeholder="e.g. Baker, May 2029"></label>
+<label class="f"><span class="n">Phone number</span><input id="f-phone" type="tel" required autocomplete="tel"></label>
+</div>
+<label class="f" style="margin-top:14px"><span class="n">Major(s) and Minor(s)</span><input id="f-major" required></label>
+</fieldset>
+
+<fieldset>
+<legend>Your answers</legend>
+<p class="hint">Short answers are great. Word limits are shown under each box.</p>
+<div class="qs">
+<label class="f"><span class="n">Why are you interested in joining Rice CHAMPs? (150 words max)</span><textarea id="f-why" required data-max="150"></textarea></label>
 <fieldset class="sec" data-show="vol">
 <legend>Which volunteer program?</legend>
 <p class="hint">Choose one program, or rank both. You'll receive one placement, based on your interview, your ranking, and each hospital's capacity.</p>
@@ -70,24 +87,6 @@
 </div>
 </div>
 </fieldset>
-
-<fieldset>
-<legend>About you</legend>
-<p class="hint">&nbsp;</p>
-<div class="grid2">
-<label class="f"><span class="n">Name (First and Last)</span><input id="f-name" required autocomplete="name"></label>
-<label class="f"><span class="n">Rice Email</span><input id="f-email" type="email" required autocomplete="email"></label>
-<label class="f"><span class="n">College and Expected Graduation Date</span><input id="f-year" required placeholder="e.g. Baker, May 2029"></label>
-<label class="f"><span class="n">Phone number</span><input id="f-phone" type="tel" required autocomplete="tel"></label>
-</div>
-<label class="f" style="margin-top:14px"><span class="n">Major(s) and Minor(s)</span><input id="f-major" required></label>
-</fieldset>
-
-<fieldset>
-<legend>Your answers</legend>
-<p class="hint">Short answers are great. Word limits are shown under each box.</p>
-<div class="qs">
-<label class="f"><span class="n">Why are you interested in joining Rice CHAMPs? (150 words max)</span><textarea id="f-why" required data-max="150"></textarea></label>
 <div class="cq" data-show="edu" style="--c:var(--blue)"><label class="f"><span class="n">Education Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-req data-max="100"></textarea></label></div>
 <div class="cq" data-show="out" style="--c:var(--green)"><label class="f"><span class="n">Outreach Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-req data-max="100"></textarea></label></div>
 <div class="cq" data-show="soc" style="--c:var(--orange)"><label class="f"><span class="n">Socials Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-req data-max="100"></textarea></label></div>
