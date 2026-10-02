@@ -104,7 +104,8 @@ nav a[aria-current]{color:var(--head);font-weight:700}
 .hero.story p.sub:last-child{margin-bottom:0;font-weight:600;color:#3b44ab}
 .team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .person{background:var(--surface);border-radius:22px;padding:26px 22px 28px;text-align:center;border-bottom:8px solid var(--c)}
-.person .photo{width:120px;height:120px;border-radius:50%;margin:0 auto 16px;border:4px dashed var(--c);display:grid;place-items:center;color:var(--muted);font-size:14px;font-weight:500;background:var(--bg)}
+.person .photo{width:120px;height:120px;border-radius:50%;margin:0 auto 16px;border:4px dashed var(--c);display:grid;place-items:center;color:var(--muted);font-size:14px;font-weight:500;background:var(--bg);overflow:hidden}
+.person .photo.has img{width:100%;height:100%;object-fit:cover;display:block}
 .person h3{margin:0;font-size:20px;font-weight:700;color:var(--head)}
 .person .role-t{font-weight:600;font-size:14px;color:var(--c);margin:2px 0 10px}
 .person p{margin:0;color:var(--muted);font-size:15px}
