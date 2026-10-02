@@ -41,6 +41,18 @@
 <p class="err" id="roleerr" role="alert"></p>
 </fieldset>
 
+<fieldset class="sec" data-show="vol">
+<legend>Which volunteer program?</legend>
+<p class="hint">Choose one program, or rank both. You'll receive one placement, based on your interview, your ranking, and each hospital's capacity.</p>
+<div class="tiles" id="programs">
+<label class="tile"><input type="radio" name="program" value="CMH Only" data-p="cmh" data-req><span class="box"><span><b>CMH only</b><small>Children's Memorial Hermann. Two 2-hour shifts, Mon to Sat, 9 AM to 7 PM</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="radio" name="program" value="TIRR MH Only" data-p="tirr" data-req><span class="box"><span><b>TIRR Memorial Hermann only</b><small>One 3-hour shift, Mon to Sun. In-patient 9 AM to 8 PM, Therapy Gym 9 AM to 4 PM</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="radio" name="program" value="Both, CMH First Choice" data-p="both" data-req><span class="box"><span><b>Both, CMH first choice</b><small>I'd be happy with either program</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="radio" name="program" value="Both, TIRR MH First Choice" data-p="both" data-req><span class="box"><span><b>Both, TIRR Memorial Hermann first choice</b><small>I'd be happy with either program</small></span><i>&#10003;</i></span></label>
+</div>
+<p class="err" id="progerr" role="alert"></p>
+</fieldset>
+
 <fieldset>
 <legend>About you</legend>
 <p class="hint">&nbsp;</p>
@@ -58,18 +70,6 @@
 <p class="hint">Short answers are great. Word limits are shown under each box.</p>
 <div class="qs">
 <label class="f"><span class="n">Why are you interested in joining Rice CHAMPs? (150 words max)</span><textarea id="f-why" required data-max="150"></textarea></label>
-<fieldset class="sec" data-show="vol">
-<legend>Which volunteer program?</legend>
-<p class="hint">Choose one program, or rank both. You'll receive one placement, based on your interview, your ranking, and each hospital's capacity.</p>
-<div class="tiles" id="programs">
-<label class="tile"><input type="radio" name="program" value="CMH Only" data-p="cmh" data-req><span class="box"><span><b>CMH only</b><small>Children's Memorial Hermann. Two 2-hour shifts, Mon to Sat, 9 AM to 7 PM</small></span><i>&#10003;</i></span></label>
-<label class="tile"><input type="radio" name="program" value="TIRR MH Only" data-p="tirr" data-req><span class="box"><span><b>TIRR Memorial Hermann only</b><small>One 3-hour shift, Mon to Sun. In-patient 9 AM to 8 PM, Therapy Gym 9 AM to 4 PM</small></span><i>&#10003;</i></span></label>
-<label class="tile"><input type="radio" name="program" value="Both, CMH First Choice" data-p="both" data-req><span class="box"><span><b>Both, CMH first choice</b><small>I'd be happy with either program</small></span><i>&#10003;</i></span></label>
-<label class="tile"><input type="radio" name="program" value="Both, TIRR MH First Choice" data-p="both" data-req><span class="box"><span><b>Both, TIRR Memorial Hermann first choice</b><small>I'd be happy with either program</small></span><i>&#10003;</i></span></label>
-</div>
-<p class="err" id="progerr" role="alert"></p>
-
-<div class="qs" style="margin-top:18px">
 <div class="cq" data-show="cmh" style="--c:var(--pink)">
 <p class="lbl" style="font-size:17px">CMH volunteer questions</p>
 <fieldset class="yn"><legend class="n">CMH shifts: Mon to Sat, 9 AM to 7 PM. Can you commit to two 2-hour shifts per week in spring semester?</legend>
@@ -85,8 +85,6 @@
 <label class="chk"><input type="radio" name="tirrok" value="No" data-req><span>No</span></label></fieldset>
 <label class="f"><span class="n">The TIRR MH program focuses on supporting patients and families through the long, often unpredictable process of rehabilitation after a serious injury or illness. Describe a time when you stayed patient and supportive while someone worked through a slow or discouraging process, and what you learned from it. (150 words max)</span><textarea id="f-tirrwhy" data-req data-max="150"></textarea></label>
 </div>
-</div>
-</fieldset>
 <div class="cq" data-show="edu" style="--c:var(--blue)"><label class="f"><span class="n">Education Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-req data-max="100"></textarea></label></div>
 <div class="cq" data-show="out" style="--c:var(--green)"><label class="f"><span class="n">Outreach Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-req data-max="100"></textarea></label></div>
 <div class="cq" data-show="soc" style="--c:var(--orange)"><label class="f"><span class="n">Socials Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-req data-max="100"></textarea></label></div>
