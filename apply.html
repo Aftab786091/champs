@@ -24,7 +24,7 @@
 <div class="hero small">
 <h1>Rice CHAMPs Founding Cohort Application</h1>
 <div class="chips" style="margin:0 0 14px"><span class="chip">Due October 15</span><span class="chip">Interviews October 20</span><span class="chip">Decisions October 25</span></div>
-<p class="sub">Takes about 10 minutes.</p>
+<p class="sub">Takes about 10 minutes. Volunteer at Children’s Memorial Hermann, TIRR Memorial Hermann, or rank both.</p>
 </div>
 
 <section class="formwrap">
@@ -33,12 +33,42 @@
 <legend>Which roles would you like to join?</legend>
 <p class="hint">Select all that apply.</p>
 <div class="tiles" id="roles">
-<label class="tile"><input type="checkbox" name="role" value="Pediatric Volunteer" data-k="vol"><span class="box"><span><b>Pediatric Volunteer at CMH</b><small>4 hrs/week</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="checkbox" name="role" value="Pediatric Volunteer" data-k="vol"><span class="box"><span><b>Volunteer</b><small>CMH: 4 hrs/week. TIRR Memorial Hermann: 3 hrs/week</small></span><i>&#10003;</i></span></label>
 <label class="tile"><input type="checkbox" name="role" value="Education Committee" data-k="edu"><span class="box"><span><b>Education Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
 <label class="tile"><input type="checkbox" name="role" value="Outreach Committee" data-k="out"><span class="box"><span><b>Outreach Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
 <label class="tile"><input type="checkbox" name="role" value="Socials Committee" data-k="soc"><span class="box"><span><b>Socials Committee</b><small>1 to 2 hrs/week</small></span><i>&#10003;</i></span></label>
 </div>
 <p class="err" id="roleerr" role="alert"></p>
+</fieldset>
+
+<fieldset class="sec" data-show="vol">
+<legend>Which volunteer program?</legend>
+<p class="hint">Choose one program, or rank both. You'll receive one placement, based on your interview, your ranking, and each hospital's capacity.</p>
+<div class="tiles" id="programs">
+<label class="tile"><input type="radio" name="program" value="CMH Only" data-p="cmh" data-req><span class="box"><span><b>CMH only</b><small>Children's Memorial Hermann. Two 2-hour shifts, Mon to Sat, 9 AM to 7 PM</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="radio" name="program" value="TIRR MH Only" data-p="tirr" data-req><span class="box"><span><b>TIRR Memorial Hermann only</b><small>One 3-hour shift, Mon to Sun. In-patient 9 AM to 8 PM, Therapy Gym 9 AM to 4 PM</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="radio" name="program" value="Both, CMH First Choice" data-p="both" data-req><span class="box"><span><b>Both, CMH first choice</b><small>I'd be happy with either program</small></span><i>&#10003;</i></span></label>
+<label class="tile"><input type="radio" name="program" value="Both, TIRR MH First Choice" data-p="both" data-req><span class="box"><span><b>Both, TIRR Memorial Hermann first choice</b><small>I'd be happy with either program</small></span><i>&#10003;</i></span></label>
+</div>
+<p class="err" id="progerr" role="alert"></p>
+
+<div class="qs" style="margin-top:18px">
+<div class="cq" data-show="cmh" style="--c:var(--pink)">
+<p class="lbl" style="font-size:17px">CMH volunteer questions</p>
+<fieldset class="yn"><legend class="n">CMH shifts: Mon to Sat, 9 AM to 7 PM. Can you commit to two 2-hour shifts per week in spring semester?</legend>
+<label class="chk"><input type="radio" name="cmhok" value="Yes" data-req><span>Yes</span></label>
+<label class="chk"><input type="radio" name="cmhok" value="No" data-req><span>No</span></label></fieldset>
+<label class="f"><span class="n">The CMH program focuses on providing companionship, comfort, and emotional support to children and their families. Describe a time when you helped someone feel supported during a difficult or stressful situation. (150 words max)</span><textarea id="f-supported" data-req data-max="150"></textarea></label>
+</div>
+
+<div class="cq" data-show="tirr" style="--c:var(--blue)">
+<p class="lbl" style="font-size:17px">TIRR Memorial Hermann volunteer questions</p>
+<fieldset class="yn"><legend class="n">TIRR MH shifts: Mon to Sun, 9 AM to 8 PM for in-patient shifts and 9 AM to 4 PM for Therapy Gym shifts. Can you commit to one 3-hour shift per week in spring semester?</legend>
+<label class="chk"><input type="radio" name="tirrok" value="Yes" data-req><span>Yes</span></label>
+<label class="chk"><input type="radio" name="tirrok" value="No" data-req><span>No</span></label></fieldset>
+<label class="f"><span class="n">The TIRR MH program focuses on supporting patients and families through the long, often unpredictable process of rehabilitation after a serious injury or illness. Describe a time when you stayed patient and supportive while someone worked through a slow or discouraging process, and what you learned from it. (150 words max)</span><textarea id="f-tirrwhy" data-req data-max="150"></textarea></label>
+</div>
+</div>
 </fieldset>
 
 <fieldset>
@@ -58,10 +88,9 @@
 <p class="hint">Short answers are great. Word limits are shown under each box.</p>
 <div class="qs">
 <label class="f"><span class="n">Why are you interested in joining Rice CHAMPs? (150 words max)</span><textarea id="f-why" required data-max="150"></textarea></label>
-<div class="cq" data-for="vol" style="--c:var(--pink)"><label class="f"><span class="n">This program focuses on providing companionship, comfort, and emotional support to children and their families. Describe a time when you helped someone feel supported during a difficult or stressful situation. (150 words max)</span><textarea id="f-supported" data-max="150"></textarea></label></div>
-<div class="cq" data-for="edu" style="--c:var(--blue)"><label class="f"><span class="n">Education Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-max="100"></textarea></label></div>
-<div class="cq" data-for="out" style="--c:var(--green)"><label class="f"><span class="n">Outreach Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-max="100"></textarea></label></div>
-<div class="cq" data-for="soc" style="--c:var(--orange)"><label class="f"><span class="n">Socials Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-max="100"></textarea></label></div>
+<div class="cq" data-show="edu" style="--c:var(--blue)"><label class="f"><span class="n">Education Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-req data-max="100"></textarea></label></div>
+<div class="cq" data-show="out" style="--c:var(--green)"><label class="f"><span class="n">Outreach Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-req data-max="100"></textarea></label></div>
+<div class="cq" data-show="soc" style="--c:var(--orange)"><label class="f"><span class="n">Socials Committee: Why are you interested, and what would you bring? (100 words max)</span><textarea data-req data-max="100"></textarea></label></div>
 <label class="f"><span class="n">List any extracurriculars or commitments you have this year.</span><textarea id="f-extra" required></textarea></label>
 </div>
 </fieldset>
@@ -82,16 +111,23 @@
 </footer>
 <script>
 (function(){
-/* Google Form connection. To point this page at a different form, change FORM_ID and the entry numbers in E. */
+/* Google Form connection. To point this page at a different form, change FORM_ID and the entry numbers in E.
+   Entries that still say REPLACE are skipped on submit (see the README). */
 var FORM_ID="1FAIpQLSfZivrpBeLIXBJGRTUkiM7w1sM0OLi4kdmDIhiNzU_HVJN_ig";
 var POST_URL="https://docs.google.com/forms/d/e/"+FORM_ID+"/formResponse";
 var VIEW_URL="https://docs.google.com/forms/d/e/"+FORM_ID+"/viewform";
-var E={name:"entry.2005620554",email:"entry.1045781291",year:"entry.1065046570",phone:"entry.1166974658",major:"entry.839337160",roles:"entry.304485123",why:"entry.699560844",supported:"entry.2024790593",committees:"entry.376921666",extra:"entry.1954516655"};
+var E={name:"entry.2005620554",email:"entry.1045781291",year:"entry.1065046570",phone:"entry.1166974658",major:"entry.839337160",roles:"entry.304485123",why:"entry.699560844",supported:"entry.2024790593",committees:"entry.376921666",extra:"entry.1954516655",
+  program:"entry.343172520",cmhOk:"entry.890482014",tirrOk:"entry.2093796959",tirrWhy:"entry.489434499"};
 
 var form=document.getElementById('app'),boxes=[].slice.call(form.querySelectorAll('input[name=role]')),
-    err=document.getElementById('roleerr'),serr=document.getElementById('submiterr'),btn=document.getElementById('sendbtn');
+    radios=[].slice.call(form.querySelectorAll('input[name=program]')),
+    err=document.getElementById('roleerr'),perr=document.getElementById('progerr'),serr=document.getElementById('submiterr'),btn=document.getElementById('sendbtn');
 function words(s){s=s.trim();return s?s.split(/\s+/).length:0}
 function val(id){return document.getElementById(id).value.trim()}
+function picked(k){return boxes.some(function(b){return b.dataset.k===k&&b.checked})}
+function program(){var r=radios.filter(function(x){return x.checked})[0];return r?r.value:''}
+function checked(n){var r=form.querySelector('input[name='+n+']:checked');return r?r.value:''}
+function pk(){var r=radios.filter(function(x){return x.checked})[0];return r?r.dataset.p:''}
 
 [].slice.call(form.querySelectorAll('textarea[data-max]')).forEach(function(t){
   var max=+t.dataset.max,c=document.createElement('span');c.className='wc';t.parentNode.appendChild(c);
@@ -100,38 +136,56 @@ function val(id){return document.getElementById(id).value.trim()}
 });
 
 function sync(){
-  boxes.forEach(function(b){
-    var q=form.querySelector('.cq[data-for="'+b.dataset.k+'"]');
-    if(!q)return;
-    q.classList.toggle('on',b.checked);
-    var t=q.querySelector('textarea');t.required=b.checked;
+  var vol=picked('vol'),p=pk();
+  var on={vol:vol,cmh:vol&&(p==='cmh'||p==='both'),tirr:vol&&(p==='tirr'||p==='both'),
+          edu:picked('edu'),out:picked('out'),soc:picked('soc')};
+  [].slice.call(form.querySelectorAll('[data-show]')).forEach(function(el){
+    var show=on[el.dataset.show];
+    el.classList.toggle('on',show);
+    [].slice.call(el.querySelectorAll('[data-req]')).forEach(function(f){f.required=show});
   });
   if(boxes.some(function(b){return b.checked}))err.textContent='';
+  if(p)perr.textContent='';
 }
 boxes.forEach(function(b){b.addEventListener('change',sync)});
+radios.forEach(function(r){r.addEventListener('change',sync)});
+sync();
 
 form.addEventListener('submit',function(e){
   e.preventDefault();serr.textContent='';
-  var picked=boxes.filter(function(b){return b.checked});
-  if(!picked.length){err.textContent='Select at least one role to continue.';document.getElementById('roles').scrollIntoView({behavior:'smooth',block:'center'});return;}
+  var chosen=boxes.filter(function(b){return b.checked});
+  if(!chosen.length){err.textContent='Select at least one role to continue.';document.getElementById('roles').scrollIntoView({behavior:'smooth',block:'center'});return;}
+  if(picked('vol')&&!program()){perr.textContent='Choose a volunteer program, or rank both.';document.getElementById('programs').scrollIntoView({behavior:'smooth',block:'center'});return;}
   if(!form.checkValidity()){form.reportValidity();return;}
   var tooLong=[].slice.call(form.querySelectorAll('textarea[data-max]')).filter(function(t){return t.offsetParent!==null&&words(t.value)>+t.dataset.max});
   if(tooLong.length){serr.textContent='One or more answers are over the word limit. Please shorten them and try again.';tooLong[0].focus();return;}
 
   var p=new URLSearchParams();
-  p.append(E.name,val('f-name'));p.append(E.email,val('f-email'));p.append(E.year,val('f-year'));
-  p.append(E.phone,val('f-phone'));p.append(E.major,val('f-major'));
-  picked.forEach(function(b){p.append(E.roles,b.value)});
-  p.append(E.why,val('f-why'));
-  if(boxes[0].checked)p.append(E.supported,val('f-supported'));
+  function add(k,v){if(E[k]&&E[k].indexOf('REPLACE')===-1)p.append(E[k],v);else console.warn('Form entry not set up yet, skipped:',k)}
+  add('name',val('f-name'));add('email',val('f-email'));add('year',val('f-year'));
+  add('phone',val('f-phone'));add('major',val('f-major'));
+  chosen.forEach(function(b){add('roles',b.value)});
+  add('why',val('f-why'));
+  if(picked('vol')){
+    var prog=pk();
+    add('program',program());
+    if(prog==='cmh'||prog==='both'){
+      add('cmhOk',checked('cmhok'));
+      add('supported',val('f-supported'));
+    }
+    if(prog==='tirr'||prog==='both'){
+      add('tirrOk',checked('tirrok'));
+      add('tirrWhy',val('f-tirrwhy'));
+    }
+  }
   var parts=[];
-  boxes.slice(1).forEach(function(b){
-    if(!b.checked)return;
-    var t=form.querySelector('.cq[data-for="'+b.dataset.k+'"] textarea').value.trim();
+  chosen.forEach(function(b){
+    if(b.dataset.k==='vol')return;
+    var t=form.querySelector('.cq[data-show="'+b.dataset.k+'"] textarea').value.trim();
     parts.push(b.value+': '+t);
   });
-  if(parts.length)p.append(E.committees,parts.join('\n\n'));
-  p.append(E.extra,val('f-extra'));
+  if(parts.length)add('committees',parts.join('\n\n'));
+  add('extra',val('f-extra'));
 
   btn.disabled=true;btn.textContent='Sending...';
   fetch(POST_URL,{method:'POST',mode:'no-cors',body:p}).then(function(){

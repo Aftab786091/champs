@@ -6,7 +6,7 @@ Plain HTML, CSS, and one logo file. No build step. Pages link to each other with
 - `index.html` Home
 - `program.html` Program
 - `team.html` Team (officer names, photos, and contact are placeholders in [brackets])
-- `faq.html` FAQ (two answers are placeholders: premed policy and missed-deadline policy)
+- `faq.html` FAQ (premed policy and missed-deadline answers are placeholders; TIRR Memorial Hermann details are general until the program is finalized)
 - `apply.html` Application form
 - `style.css` All colors, fonts, and layout for every page. Brand colors are at the top, in `:root`.
 - `logo.png` Logo and browser tab icon
@@ -30,7 +30,15 @@ Yellow highlighted text on the FAQ and Apply pages is a placeholder to replace.
 Edit the color values at the top of `style.css`, in the `:root` block. The change applies to every page.
 
 ## Connecting the application form
-In `apply.html`, find the line `var FORM_URL="";` and this is where the form connection will go. Until it's connected, the Submit button shows a "preview only" notice and sends nothing.
+`apply.html` posts to a Google Form. The form ID and entry numbers are in the `E` block at the top of the script. To find an entry number, open the form's pre-filled link ("Get pre-filled link") and look for `entry.NNNNNNN` next to each question.
+
+The volunteer questions use these entries: `program` (which program), `cmhOk` and `tirrOk` (Yes/No: can you commit to the weekly shifts), `tirrWhy` (the TIRR "stayed patient and supportive" answer), and the existing `supported` entry for the CMH answer. Shifts are not collected; students only confirm they can commit. If a question is ever recreated in the form, update its entry number in `E`.
+
+Option text in multiple-choice and checkbox questions must match the site exactly, or Google will reject the response:
+- **Roles** (checkboxes): `Pediatric Volunteer`, `Education Committee`, `Outreach Committee`, `Socials Committee`. The volunteer option keeps the original text `Pediatric Volunteer`.
+- **Program** (multiple choice): `CMH Only`, `TIRR MH Only`, `Both, TIRR MH First Choice`, `Both, CMH First Choice`.
+
+The CMH "helped someone feel supported" answer still goes to the existing `supported` entry. The commitment checkboxes are checked on the page only and are not sent to the form.
 
 ## Adding a custom domain later
 In **Settings**, then **Pages**, enter the domain under **Custom domain** and follow GitHub's DNS instructions. The site files don't need to change.

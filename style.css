@@ -47,7 +47,7 @@ h2{font-size:clamp(24px,3.5vw,34px);line-height:1.2;font-weight:800;color:var(--
 .role{grid-template-columns:1fr auto}
 .role .hrs{grid-column:2;grid-row:1;font-weight:600;font-size:13px;background:var(--line);color:var(--head);padding:4px 12px;border-radius:999px;white-space:nowrap}
 .role p{grid-column:1/-1}
-.role:nth-child(1){--c:var(--pink)}.role:nth-child(2){--c:var(--blue)}.role:nth-child(3){--c:var(--green)}.role:nth-child(4){--c:var(--orange)}
+.role:nth-child(1){--c:var(--pink)}.role:nth-child(2){--c:var(--blue)}.role:nth-child(3){--c:var(--green)}.role:nth-child(4){--c:var(--orange)}.role:nth-child(5){--c:var(--red)}
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative}
 .steps::before{content:"";position:absolute;left:10%;right:10%;top:13px;height:4px;background:var(--line);border-radius:4px}
 .steps li{position:relative;text-align:center;padding-top:40px}
@@ -86,7 +86,7 @@ nav a[aria-current]{color:var(--head);font-weight:700}
 .rolecard .hrs{font-weight:600;font-size:13px;background:var(--line);color:var(--head);padding:4px 12px;border-radius:999px;white-space:nowrap}
 .rolecard p{margin:0;color:var(--muted);max-width:68ch}
 .rolecard .tag{font-weight:600;font-size:14px;color:var(--c)}
-.rolecard:nth-of-type(1){--c:var(--pink)}.rolecard:nth-of-type(2){--c:var(--blue)}.rolecard:nth-of-type(3){--c:#5fa11a}.rolecard:nth-of-type(4){--c:#d98a0b}
+.rolecard:nth-of-type(1){--c:var(--pink)}.rolecard:nth-of-type(2){--c:var(--blue)}.rolecard:nth-of-type(3){--c:#5fa11a}.rolecard:nth-of-type(4){--c:#d98a0b}.rolecard:nth-of-type(5){--c:var(--red)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .rolecard:nth-of-type(3){--c:var(--green)}:root:not([data-theme="light"]) .rolecard:nth-of-type(4){--c:var(--orange)}}
 .lead{font-size:18px;max-width:68ch;margin:0 0 6px}
 .checks{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
@@ -166,3 +166,12 @@ legend,.lbl{font-size:20px;font-weight:800;color:var(--head);margin:0 0 4px;padd
 .btn:disabled{opacity:.6;cursor:wait}
 .person:nth-child(4){--c:var(--pink)}.person:nth-child(5){--c:var(--blue)}.person:nth-child(6){--c:#5fa11a}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .person:nth-child(6){--c:var(--green)}}
+
+.rolecard .when{font-size:14px;font-weight:600;color:var(--head)}
+.sec{display:none;margin:0 0 34px}
+.sec.on{display:block}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--text);cursor:pointer}
+.chk input{flex:none;width:20px;height:20px;margin:3px 0 0;accent-color:var(--indigo)}
+.cq .hint{margin:0}
+fieldset.yn{margin:0;display:grid;gap:8px}
+fieldset.yn legend.n{font-weight:600;font-size:15px;color:var(--text);margin-bottom:6px}
